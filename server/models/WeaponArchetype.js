@@ -2,9 +2,20 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const tagSchema = new Schema({
+const weaponArchetypeSchema = new Schema({
+    
     _id: {
         type: Schema.Types.ObjectId,
+    },
+
+    baseDice: {
+        type: Number,
+        required: true,
+    },
+
+    baseHarm: {
+        type: Number,
+        required: true,
     },
 
     typeName: {
@@ -26,3 +37,7 @@ const tagSchema = new Schema({
 
 
 });
+
+const WeaponArchetype = mongoose.model('WeaponArchetype', weaponArchetypeSchema);
+
+module.exports = WeaponArchetype;
